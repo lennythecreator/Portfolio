@@ -16,7 +16,7 @@ export default function Home() {
           <Navbar/>
         <div className="w-32 h-32 rounded-full bg-muted mb-8" />
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-          Hi I'm Lenny Uwaeme, a Software Engineer passionate about AI.
+          Hi I&apos;m Lenny Uwaeme, a Software Engineer passionate about AI.
         </h1>
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           {['Front-end', 'Backend', 'Full Stack', 'AI/ML'].map((skill) => (
