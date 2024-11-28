@@ -73,3 +73,12 @@ body,#root,html {
     @apply bg-background text-foreground;
   }
 }
+
+.proj-card { }
+.proj-card:hover { 
+  animation: scaleUp 0.6s ease-in-out; 
+  animation-fill-mode: forwards;}
+@keyframes scaleUp {
+   0% { transform: scale(1); } 
+   100% { transform: scale(1.1);}
+ }

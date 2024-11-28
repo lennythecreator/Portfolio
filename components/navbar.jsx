@@ -28,8 +28,8 @@ const Navbar = () => {
 
 const NavItem = ({ icon, text,link }) => (
   <li className="flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-[#0e1111] hover:text-white cursor-pointer transition-all duration-300 text-sm font-medium">
-    {icon}
-    <Link href={link}>{text}</Link>
+   
+    <Link href={link} className='flex gap-2 items-center'> {icon}{text}</Link>
   </li>
 );
 

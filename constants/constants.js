@@ -88,15 +88,31 @@ const EXPERIENCE = [
 
 const PROJECTS = [
     {
+        name:"Chiron - AI Study Buddy",
+        technologies:["JavaScript", "React", "AWS Transcribe","AWS S3", "Flask"],
+        date:"October 2024",
+        description:"Created an AI study buddy that generated transcripts of lectures enabling users to chat with the  assistant about any particular lecture. Utilized AWS Transcribe to give assistant the ability to generate quizzes, flashcards and podcasts from a lecture."
+    },
+    {
         name: "PropertyLens - The AI Room Inspector",
         technologies: ["JavaScript", "C#", "Docker", "SQL"],
         date: "July 2024",
-        description: [
-            "Developed an AI-powered room inspection app that won 'Best Customer Value' at a hackathon.",
-            "Integrated Vision-Language Model on Azure AI Studio for property verification.",
-            "Used Docker to set up a containerized SQL environment for managing inventory and inspection data."
-        ]
+        description: 
+            "Developed an AI-powered room inspection app that won 'Best Customer Value' at a hackathon. Integrated Vision-Language Model on Azure AI Studio for property verification. Used Docker to set up a containerized SQL environment for managing inventory and inspection data."
+    },
+    {
+        name:"Cosmos",
+        technologies:["JavaScript","React","Flask"],
+        date:"August 2024",
+        description:"A speaker management application that empowers event organizers to manage and communicate with speakers attending their events."        
+    },
+    {
+        name:"HealthVault",
+        technologies:["JavaScript","React","Flask"],
+        date: "May 2024",
+        description: "A health community platform that enables users to ask and answer fitness-related questions, and includes a calorie calculator, a library of exercises, and a collection of recipes."
     }
+
 ];
 
 const LEADERSHIP = {
