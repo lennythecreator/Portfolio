@@ -12,9 +12,13 @@ export default function Home() {
   const interests = ["Front-end", "Backend", "Full Stack", "AI/ML"]
   return (
     <div className="h-full">
-        <div className="flex flex-col items-center justify-center  text-center">
-          <Navbar/>
-        <div className="w-32 h-32 rounded-full bg-muted mb-8" />
+      <div className="flex flex-col items-center justify-center text-center">
+        <Navbar />
+        <div className="w-32 h-32 rounded-full mb-8">
+          <Avatar className='h-36 w-36'>
+            <AvatarImage src="/my-notion-face-portrait.png" ></AvatarImage>
+          </Avatar>
+        </div>
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
           Hi I&apos;m Lenny Uwaeme, a Software Engineer passionate about AI.
         </h1>
@@ -32,7 +36,6 @@ export default function Home() {
           <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
             <Link2 size={18} />
             <Link href={"https://www.linkedin.com/in/lennythecreator/"} target="_blank">Connect with me</Link>
-            
           </button>
           <button className="px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 transition-colors">
             <Link href={"https://github.com/lennythecreator"} target="_blank">See my work</Link>
@@ -40,6 +43,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+
    
   );
 }
