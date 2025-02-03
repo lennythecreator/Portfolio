@@ -3,7 +3,7 @@ import React from 'react'
 import { EXPERIENCE } from '@/constants/constants'
 import { Dot } from 'lucide-react'
 export default function page() {
-  const backGround = "I&apos;m a software engineer with a diverse background in different areas of application development. I currently studying Computer Science at Morgan State University with a focus on Machine Learning.\n My current work involves integrating ML models into applications for practical use.\n I currently work at the MINDS lab and CoNA lab developing ML solutions for social good."
+  const backGround = "I'm a software engineer with a diverse background in different areas of application development. I  am currently studying Computer Science at Morgan State University with a focus on Machine Learning.\n My current work involves integrating ML models into applications for practical use.\n I currently work at the MINDS lab and CoNA lab developing ML solutions for social good."
 
   const funFact="A fun fact about me is that I play the guitar and love to draw in my free time."
   return (
