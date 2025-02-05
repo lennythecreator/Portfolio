@@ -88,6 +88,12 @@ const EXPERIENCE = [
 
 const PROJECTS = [
     {
+        name: "Sphinx AI",
+        technologies:["Javascript, Next.js, GCP"],
+        date:"October 2024",
+        description:"Built a career advice assistant with the ability to offer career advice designed to help students navigate their careers and majors. It provides valuable information on various majors, careers, and the general job market as well as realtime salary data and resources like books and videos for users."
+    },
+    {
         name:"Chiron - AI Study Buddy",
         technologies:["JavaScript", "React", "AWS Transcribe","AWS S3", "Flask"],
         date:"October 2024",
