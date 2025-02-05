@@ -60,7 +60,7 @@ const EXPERIENCE = [
         title:"Frontend Engineer",
         company:"CoNA Lab",
         location:"Baltimore , Maryland",
-        responsibilities:"Developed an accessibility tool with react and tailwind CSS to created that identifies and highlights accessibility violations.",
+        responsibilities:"Developed an accessibility tool with react and tailwind CSS to that identifies and highlights accessibility violations.",
         date:"Present"
     },
     {
@@ -68,7 +68,7 @@ const EXPERIENCE = [
         company:"MINDS Lab",
         location:"Maryland",
         date:"Present",
-        responsibilities:"Developing Machine Learning models to highlight desparities in healthcare outcomes."
+        responsibilities:"Developing Machine Learning models to highlight  disparities in healthcare outcomes."
     },
     {
         title: "Software Engineer Intern (AI/ML)",
