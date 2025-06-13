@@ -88,6 +88,12 @@ const EXPERIENCE = [
 
 const PROJECTS = [
     {
+        name: "EcoFitz",
+        technologies:["Next.js","Flask","AWS S3", "boto3","PostgreSQL"],
+        date:"April 2025",
+        description:"EcoFit 3D is a web platform that empowers users to design sustainable fashion using intuitive 3D modeling tools and AI-powered personalization. Users can create original eco-friendly clothing, upload inspiration images, and explore a marketplace of community-generated designs. The platform integrates interactive 3D previews, a chat-based design assistant, and seamless user authentication, all built with Next.js, React, and a Python backend."
+    },
+    {
         name: "Sphinx AI",
         technologies:["Javascript, Next.js, GCP"],
         date:"October 2024",
