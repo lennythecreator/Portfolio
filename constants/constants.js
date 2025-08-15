@@ -57,18 +57,18 @@ const TECHNICAL_SKILLS = {
 
 const EXPERIENCE = [
     {
-        title:"Frontend Engineer",
-        company:"CoNA Lab",
+        title:"Software Engineer",
+        company:"Cognitive and Neurodiversity Lab",
         location:"Baltimore , Maryland",
-        responsibilities:"Developed an accessibility tool with react and tailwind CSS to that identifies and highlights accessibility violations.",
+        responsibilities:"At the Cognitive and Neurodiversity Lab, I developed a React-based interface that enabled users to audit websites for WCAG 2.1 compliance using an in-house Vision-Language Model, significantly enhancing the speed and accuracy of accessibility reviews. I implemented Redux for managing global state from streamed internal API data, which improved UI responsiveness and user experience. Additionally, I optimized data delivery using Server-Sent Events (SSE), reducing interface latency by 70% and enabling real-time accessibility insights",
         date:"Present"
     },
     {
-        title:"Undergraduate Researcher",
+        title:"Machine Learning Researcher",
         company:"MINDS Lab",
         location:"Maryland",
         date:"Present",
-        responsibilities:"Developing Machine Learning models to highlight  disparities in healthcare outcomes."
+        responsibilities:"At MINDS Lab, I led the data preprocessing phase to build a structured dataset for identifying factors contributing to Coronary Heart Disease. I conducted extensive background research to validate key variables and ensure methodological soundness. Using Pandas, I performed feature engineering to isolate relevant attributes, enabling the application of a feature importance algorithm that highlighted the top contributors to the disease."
     },
     {
         title: "Software Engineer Intern (AI/ML)",
