@@ -11,7 +11,7 @@ const EDUCATION = {
     university: "Morgan State University",
     location: "Baltimore, MD",
     degree: "Bachelor of Science in Computer Science",
-    graduationDate: "May 2025",
+    graduationDate: "Dec 2025",
     coursework: [
         "Calculus",
         "Data Structures & Algorithms",
@@ -59,15 +59,15 @@ const EXPERIENCE = [
     {
         title:"Software Engineer",
         company:"Cognitive and Neurodiversity Lab",
-        location:"Baltimore , Maryland",
+        location:"Baltimore , MD",
         responsibilities:"At the Cognitive and Neurodiversity Lab, I developed a React-based interface that enabled users to audit websites for WCAG 2.1 compliance using an in-house Vision-Language Model, significantly enhancing the speed and accuracy of accessibility reviews. I implemented Redux for managing global state from streamed internal API data, which improved UI responsiveness and user experience. Additionally, I optimized data delivery using Server-Sent Events (SSE), reducing interface latency by 70% and enabling real-time accessibility insights",
-        date:"Present"
+        date:"Aug 2024 - Aug 2025"
     },
     {
         title:"Machine Learning Researcher",
         company:"MINDS Lab",
         location:"Maryland",
-        date:"Present",
+        date:"May 2024 - April 2025",
         responsibilities:"At MINDS Lab, I led the data preprocessing phase to build a structured dataset for identifying factors contributing to Coronary Heart Disease. I conducted extensive background research to validate key variables and ensure methodological soundness. Using Pandas, I performed feature engineering to isolate relevant attributes, enabling the application of a feature importance algorithm that highlighted the top contributors to the disease."
     },
     {
