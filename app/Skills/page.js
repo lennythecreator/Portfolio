@@ -2,49 +2,76 @@ import Navbar from '@/components/navbar'
 import React from 'react'
 import { TECHNICAL_SKILLS } from '@/constants/constants'
 import { Badge } from '@/components/ui/badge'
-export default function page() {
+
+export default function Page() {
   return (
-    <div className='h-full'>
-        <Navbar/>
-        <div className='flex flex-col gap-4 px-20'>
-            <h1 className='text-2xl font-bold'>My Skills</h1>
-            <div>
-                <h2 className='text-xl font-medium my-2'>Languages</h2>
-                <span className='flex gap-3 py-2'>
-                    {TECHNICAL_SKILLS.languages.map((lang,index)=>(
-                        <Badge key={index} className='text-sm'>{lang}</Badge>
-                    ))}
-                </span>
-            </div>
-            
-            <div>
-                <h2 className='text-xl font-medium my-2'>Web Dev</h2>
-                <span className='flex gap-3 py-2'>
-                    {TECHNICAL_SKILLS.webDevelopment.map((web,index)=>(
-                        <Badge key={index} className='text-sm'>{web}</Badge>
-                    ))}
-                </span>
-            </div>
+    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50">
+      <Navbar />
 
-            <div>
-                <h2 className='text-xl font-medium my-2'>Frameworks & Libraries</h2>
-                <span className='flex gap-3 py-2'>
-                    {TECHNICAL_SKILLS.frameworks.map((frame,index)=>(
-                        <Badge key={index} className='text-sm'>{frame}</Badge>
-                    ))}
-                </span>
-            </div>
+      <div className="max-w-5xl mx-auto px-6 py-12">
+        <h1 className="text-4xl font-bold text-slate-800 mb-8">
+          My Skills
+        </h1>
 
-            <div>
-                <h2 className='text-xl'>Dev Tools</h2>
-                <span className='flex gap-3 py-2'>
-                    {TECHNICAL_SKILLS.tools.map((tool,index)=>(
-                        <Badge key={index} className='text-sm'>{tool}</Badge>
-                    ))}
-                </span>
+        {/* Wrapper grid for skill categories */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Languages */}
+          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <h2 className="text-xl font-semibold text-slate-700 mb-4">
+              Languages
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {TECHNICAL_SKILLS.languages.map((lang, index) => (
+                <Badge key={index} variant="secondary" className="text-sm">
+                  {lang}
+                </Badge>
+              ))}
             </div>
-            
+          </div>
+
+          {/* Web Dev */}
+          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <h2 className="text-xl font-semibold text-slate-700 mb-4">
+              Web Development
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {TECHNICAL_SKILLS.webDevelopment.map((web, index) => (
+                <Badge key={index} variant={"secondary"} className="text-sm">
+                  {web}
+                </Badge>
+              ))}
+            </div>
+          </div>
+
+          {/* Frameworks */}
+          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <h2 className="text-xl font-semibold text-slate-700 mb-4">
+              Frameworks & Libraries
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {TECHNICAL_SKILLS.frameworks.map((frame, index) => (
+                <Badge key={index} variant="secondary" className="text-sm">
+                  {frame}
+                </Badge>
+              ))}
+            </div>
+          </div>
+
+          {/* Dev Tools */}
+          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <h2 className="text-xl font-semibold text-slate-700 mb-4">
+              Developer Tools
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {TECHNICAL_SKILLS.tools.map((tool, index) => (
+                <Badge key={index} variant={"secondary"} className="text-sm">
+                  {tool}
+                </Badge>
+              ))}
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   )
 }
