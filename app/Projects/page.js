@@ -2,6 +2,8 @@ import Navbar from '@/components/navbar'
 import React from 'react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader } from '@/components/ui/card'
 import { PROJECTS } from '@/constants/constants'
+import { Github } from 'lucide-react';
+
 export default function page() {
   return (
     <div className='h-full'>
@@ -13,7 +15,14 @@ export default function page() {
           <div className='flex flex-col gap-5 p-4'>
               {PROJECTS.map((proj,index)=>(
                 <Card key={index} className='proj-card'>
-                    <CardHeader className='py-6 font-medium'>{proj.name}</CardHeader>
+                    <CardHeader className=' flex py-6 font-medium'>
+                      <span className='flex'>
+                        <p>{proj.name}</p>
+                        <a href={proj.link} target='_blank' rel='noreferrer' className='ml-auto mr-6 p-2 rounded-full bg-blue-100 hover:bg-slate-200 transition-colors ease-in-out'>
+                          <Github className='text-zinc-800 hover:text-blue-600 transition-colors ease-in-out'/>
+                        </a>
+                      </span>
+                    </CardHeader>
                     <CardDescription className='flex gap-2 px-6 pb-6'>{proj.technologies.map((tech,index)=>(
                       <span key={index}>{tech}</span>
                     ))}</CardDescription>

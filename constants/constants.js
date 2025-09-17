@@ -57,6 +57,13 @@ const TECHNICAL_SKILLS = {
 
 const EXPERIENCE = [
     {
+        title: "Undergraduate Researcher",
+        company:"Human AI Experience Lab",
+        location:"Baltimore, MD",
+        responsibilities:"At the Human-AI Experience Lab, I developed applications that leverage conversational AI and web technologies to enhance user engagement and increase user satisfaction.",
+        date:"Aug 2025 - Present"
+    },
+    {
         title:"Software Engineer",
         company:"Cognitive and Neurodiversity Lab",
         location:"Baltimore , MD",
@@ -90,18 +97,21 @@ const PROJECTS = [
     {
         name: "EcoFitz",
         technologies:["Next.js","Flask","AWS S3", "boto3","PostgreSQL"],
+        link:"https://github.com/lennythecreator/morganhacks2025",
         date:"April 2025",
         description:"EcoFit 3D is a web platform that empowers users to design sustainable fashion using intuitive 3D modeling tools and AI-powered personalization. Users can create original eco-friendly clothing, upload inspiration images, and explore a marketplace of community-generated designs. The platform integrates interactive 3D previews, a chat-based design assistant, and seamless user authentication, all built with Next.js, React, and a Python backend."
     },
     {
         name: "Sphinx AI",
         technologies:["Javascript, Next.js, GCP"],
+        link:"https://github.com/lennythecreator/Sphinx-AI",
         date:"October 2024",
         description:"Built a career advice assistant with the ability to offer career advice designed to help students navigate their careers and majors. It provides valuable information on various majors, careers, and the general job market as well as realtime salary data and resources like books and videos for users."
     },
     {
         name:"Chiron - AI Study Buddy",
         technologies:["JavaScript", "React", "AWS Transcribe","AWS S3", "Flask"],
+        link:"https://github.com/lennythecreator/Chiron---Morgan-Hack-AI",
         date:"October 2024",
         description:"Created an AI study buddy that generated transcripts of lectures enabling users to chat with the  assistant about any particular lecture. Utilized AWS Transcribe to give assistant the ability to generate quizzes, flashcards and podcasts from a lecture."
     },
@@ -121,6 +131,7 @@ const PROJECTS = [
     {
         name:"HealthVault",
         technologies:["JavaScript","React","Flask"],
+        link:"https://github.com/lennythecreator/HealthVaulth2",
         date: "May 2024",
         description: "A health community platform that enables users to ask and answer fitness-related questions, and includes a calorie calculator, a library of exercises, and a collection of recipes."
     }
