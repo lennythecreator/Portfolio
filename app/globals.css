@@ -80,5 +80,5 @@ body,#root,html {
   animation-fill-mode: forwards;}
 @keyframes scaleUp {
    0% { transform: scale(1); } 
-   100% { transform: scale(1.1);}
+   100% { transform: scale(1.05);}
  }
