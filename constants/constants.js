@@ -26,14 +26,18 @@ const EDUCATION = {
 
 const TECHNICAL_SKILLS = {
     languages: ["Python", "JavaScript", "C#","Java", "TypeScript", "Go", "R", "SQL"],
-    webDevelopment: ["HTML", "CSS"],
+    webDevelopment: ["HTML", "CSS","ARIA"],
     frameworks: [
         "React", 
         "Node.js", 
         "Flask", 
         "Express.js", 
-        "Tailwind", 
+        "Tailwind",
+        "Langchain", 
         "Bootstrap", 
+        "PyTorch", 
+        "Next.js", 
+        "Redux",
         "OpenCV", 
         "YOLOv8", 
         "Tensorflow", 
@@ -48,6 +52,9 @@ const TECHNICAL_SKILLS = {
         "GitHub", 
         "Microsoft Azure", 
         "AWS", 
+        "PostgreSQL",
+        "Firebase", 
+        "Google Cloud Platform",
         "Amazon SageMaker Studio", 
         "Azure AI Studio", 
         "MongoDB", 
@@ -139,7 +146,7 @@ const PROJECTS = [
 ];
 
 const LEADERSHIP = {
-    role: "Webmaster",
+    role: "Operation Support",
     organization: "The Society for the Advancement of Computer Science",
     location: "Baltimore, MD",
     startDate: "Aug 2023",
