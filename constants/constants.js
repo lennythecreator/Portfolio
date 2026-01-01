@@ -68,7 +68,7 @@ const EXPERIENCE = [
         company:"Human AI Experience Lab",
         location:"Baltimore, MD",
         responsibilities:"At the Human-AI Experience Lab, I developed applications that leverage conversational AI and web technologies to enhance user engagement and increase user satisfaction.",
-        date:"Aug 2025 - Present"
+        date:"Aug 2025 - Dec 2025"
     },
     {
         title:"Software Engineer",
@@ -153,4 +153,177 @@ const LEADERSHIP = {
     endDate: "Present"
 };
 
-export { CONTACT_INFO, EDUCATION, TECHNICAL_SKILLS, EXPERIENCE, PROJECTS, LEADERSHIP };
+const SERVICES = [
+    {
+        title: "Landing Page / Static Website",
+        icon: "Globe",
+        description: "Professional, fast-loading websites perfect for establishing your online presence",
+        features: [
+            "Responsive design (mobile, tablet, desktop)",
+            "3-5 custom pages",
+            "Contact forms & Google Maps",
+            "SEO optimization & analytics setup"
+        ],
+        ideal_for: "New businesses, service providers, and portfolios",
+        pricing_range: "$350 - $1,500",
+        timeline: "1-2 weeks"
+    },
+    {
+        title: "AI-Coded App Hosting & Deployment",
+        icon: "Server",
+        description: "Deploy and host your AI-generated apps with ease - no technical skills required",
+        features: [
+            "Deploy apps from Cursor, v0, Bolt, or similar tools",
+            "Domain setup & SSL certificates",
+            "Cloud hosting configuration (Vercel, Netlify, AWS)",
+            "Ongoing maintenance & updates"
+        ],
+        ideal_for: "Non-technical founders with AI-generated code",
+        pricing_range: "$200 - $800",
+        timeline: "2-5 days"
+    },
+    {
+        title: "Custom E-commerce Website",
+        icon: "ShoppingCart",
+        description: "Complete online store solutions to start selling your products",
+        features: [
+            "Product catalog & search",
+            "Shopping cart & checkout",
+            "Payment gateway integration (Stripe, PayPal)",
+            "Inventory & order management"
+        ],
+        ideal_for: "Small retailers and online stores",
+        pricing_range: "$2,500 - $4,500",
+        timeline: "3-4 weeks"
+    },
+    {
+        title: "Mobile App Development",
+        icon: "Smartphone",
+        description: "Cross-platform mobile apps for iOS and Android",
+        features: [
+            "Native iOS & Android deployment",
+            "Cloud backend integration",
+            "Push notifications",
+            "User authentication & profiles"
+        ],
+        ideal_for: "Startups validating ideas and small business apps",
+        pricing_range: "$3,500 - $5,000",
+        timeline: "4-6 weeks"
+    },
+    {
+        title: "MVP Development",
+        icon: "Rocket",
+        description: "Launch your startup idea quickly with core features",
+        features: [
+            "Core feature implementation",
+            "User authentication & database",
+            "Responsive web application",
+            "Deployment & hosting setup"
+        ],
+        ideal_for: "Entrepreneurs testing product-market fit",
+        pricing_range: "$3,000 - $5,000",
+        timeline: "4-6 weeks"
+    },
+    {
+        title: "Full-Stack Web Application",
+        icon: "Code",
+        description: "Custom web solutions built to scale with your business",
+        features: [
+            "Custom dashboards & reporting",
+            "RESTful API development",
+            "Database design & optimization",
+            "Cloud deployment (AWS/Azure/GCP)"
+        ],
+        ideal_for: "Growing businesses needing custom solutions",
+        pricing_range: "$2,000 - $5,000",
+        timeline: "4-8 weeks"
+    }
+];
+
+// Optional Add-ons for Services
+const SERVICE_ADDONS = [
+    {
+        title: "AI/ML Integration",
+        description: "Add intelligent features to your application",
+        price_range: "+$1,000 - $2,500"
+    },
+    {
+        title: "Maintenance Package",
+        description: "Ongoing support, updates, and bug fixes",
+        price_range: "$150 - $350/month"
+    },
+    {
+        title: "Additional Features",
+        description: "Extra pages, custom functionality, or integrations",
+        price_range: "$250 - $800 each"
+    },
+    {
+        title: "WCAG Accessibility Audit",
+        description: "Compliance review and remediation",
+        price_range: "+$500 - $1,500"
+    }
+];
+
+const HERO_CONTENT = {
+    headline: "Affordable Custom Software for DMV Small Businesses",
+    subheadline: "Professional websites, mobile apps, and web solutions starting at just $350. No hidden fees, transparent pricing.",
+    value_props: [
+        {
+            icon: "DollarSign",
+            text: "Transparent Pricing",
+            description: "Clear quotes, no surprises"
+        },
+        {
+            icon: "Zap",
+            text: "Fast Turnaround",
+            description: "1-6 weeks delivery time"
+        },
+        {
+            icon: "Award",
+            text: "Quality Guaranteed",
+            description: "Modern tech stack & best practices"
+        },
+        {
+            icon: "Users",
+            text: "Local to DMV",
+            description: "Maryland-based, easy communication"
+        }
+    ],
+    primary_cta: "Book Free Consultation",
+    secondary_cta: "View My Services"
+};
+
+const BOOKING = {
+    calendly_link: "#", // Placeholder - update with actual Calendly link
+    consultation_price: "Free 30-min discovery call",
+    response_time: "Within 24 hours",
+    timezone: "EST (Maryland, USA)",
+    email_note: "Affordable custom software for DMV small businesses and startups"
+};
+
+// Payment Structure Information
+const PAYMENT_TERMS = {
+    small_projects: {
+        range: "Under $1,500",
+        structure: "50% upfront, 50% on delivery",
+        description: "Simple payment structure for smaller projects"
+    },
+    medium_projects: {
+        range: "$1,500 - $5,000",
+        structure: "33% upfront, 33% at midpoint, 34% on delivery",
+        description: "Milestone-based payments for medium projects"
+    },
+    retainer: {
+        range: "$500 - $1,500/month",
+        structure: "Monthly billing",
+        description: "For ongoing support and development work"
+    },
+    features: [
+        "No hidden fees - transparent pricing",
+        "Payment plans available",
+        "All pricing includes deployment and training",
+        "Source code ownership included"
+    ]
+};
+
+export { CONTACT_INFO, EDUCATION, TECHNICAL_SKILLS, EXPERIENCE, PROJECTS, LEADERSHIP, SERVICES, SERVICE_ADDONS, HERO_CONTENT, BOOKING, PAYMENT_TERMS };
