@@ -49,7 +49,7 @@ export default function ProjectsPage() {
             <SplitText text="Projects" delay={50} />
           </h1>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg mt-3 md:mt-4">
-            Real solutions built for real challenges. See how I've leveraged AI and modern web technologies to solve complex problems and deliver measurable results.
+            Real solutions built for real challenges. See how I&apos;ve leveraged AI and modern web technologies to solve complex problems and deliver measurable results.
           </p>
         </motion.div>
 
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
           <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
             <h3 className="text-xl md:text-2xl font-bold mb-3">Want Similar Results for Your Business?</h3>
             <p className="text-muted-foreground text-sm md:text-base mb-6">
-              Let's discuss how I can help you build custom software solutions that drive real business value.
+              Let&apos;s discuss how I can help you build custom software solutions that drive real business value.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
