@@ -76,10 +76,10 @@ export default function SkillsPage() {
           transition={{ duration: 0.6 }}
           className="mb-8 md:mb-12"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 glow-text">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 glow-text break-words">
             <SplitText text="My Skills" delay={50} />
           </h1>
-          <p className="text-muted-foreground text-sm sm:text-base md:text-lg">
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg break-words">
             A comprehensive overview of my technical expertise and tools I work with
           </p>
         </motion.div>
@@ -94,19 +94,19 @@ export default function SkillsPage() {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-card p-4 sm:p-5 md:p-6 rounded-lg border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow group"
+              className="bg-card p-4 sm:p-5 md:p-6 rounded-lg border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow group overflow-hidden"
             >
               <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
-                <div className="p-1.5 md:p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:shadow-glow-blue">
+                <div className="p-2 md:p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:shadow-glow-blue flex-shrink-0">
                   {category.icon}
                 </div>
-                <h2 className="text-lg sm:text-xl font-semibold">
+                <h2 className="text-lg sm:text-xl font-semibold break-words">
                   <SplitText text={category.title} delay={100 + index * 50} />
                 </h2>
               </div>
 
               <motion.div
-                className="flex flex-wrap gap-1.5 md:gap-2"
+                className="flex flex-wrap gap-2 md:gap-2"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: '-100px' }}
@@ -114,7 +114,7 @@ export default function SkillsPage() {
               >
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div key={skillIndex} variants={badgeVariants}>
-                    <Badge variant="secondary" className="text-xs sm:text-sm px-2 py-0.5">
+                    <Badge variant="secondary" className="text-xs sm:text-sm px-2.5 py-1 break-words">
                       {skill}
                     </Badge>
                   </motion.div>

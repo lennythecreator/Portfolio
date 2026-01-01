@@ -23,9 +23,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
+        style={{ overflowX: 'hidden', maxWidth: '100vw' }}
       >
         <LoadingScreen />
         <ParticlesBackground />
