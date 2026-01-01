@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function AboutPage() {
   const backGround =
-    "I'm a software engineer with a diverse background in different areas of application development. I am currently studying Computer Science at Morgan State University with a focus on Machine Learning. My current work involves integrating ML models into applications for practical use. I currently work at the HAX lab developing ML solutions for social good.";
+    "I'm a freelance software engineer with a diverse background in different areas of application development. I graduated from Morgan State University with a degree in Computer Science, specializing in Machine Learning. My work focuses on integrating ML models into applications for practical use, building custom web solutions for small businesses, and helping non-technical founders deploy their AI-generated apps.";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -48,10 +48,9 @@ export default function AboutPage() {
             <SplitText text="Chukwulenyeudo (Lenny) Uwaeme" delay={30} />
           </h1>
           <div className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-muted-foreground mb-4 md:mb-6">
-            <GraduationCap className="text-primary w-4 h-4 sm:w-5 sm:h-5" />
+            <Briefcase className="text-primary w-4 h-4 sm:w-5 sm:h-5" />
             <p className="text-xs sm:text-sm md:text-base">
-              <strong className="text-foreground">Computer Science Senior</strong> at{' '}
-              {EDUCATION.university}
+              <strong className="text-foreground">Freelance Software Engineer</strong> | DMV Area
             </p>
           </div>
         </motion.header>
