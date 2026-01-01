@@ -265,8 +265,8 @@ const SERVICE_ADDONS = [
 ];
 
 const HERO_CONTENT = {
-    headline: "Affordable Custom Software for DMV Small Businesses",
-    subheadline: "Professional websites, mobile apps, and web solutions starting at just $350. No hidden fees, transparent pricing.",
+    headline: "Your DMV Freelance Developer for Custom Software Solutions",
+    subheadline: "I build professional websites, mobile apps, and web solutions for small businesses—starting at just $350 with transparent, straightforward pricing.",
     value_props: [
         {
             icon: "DollarSign",

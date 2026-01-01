@@ -42,7 +42,7 @@ export default function Home() {
     <div className="min-h-screen relative">
       <Navbar />
       <motion.div
-        className="flex flex-col items-center justify-center text-center px-4 py-24 sm:py-32 md:py-40 min-h-screen"
+        className="flex flex-col items-center justify-center text-center px-4 pt-32 pb-20 sm:pt-40 sm:pb-24 md:pt-48 md:pb-32 min-h-screen"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -73,7 +73,7 @@ export default function Home() {
 
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-10 md:mb-14 max-w-4xl px-4"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-10 md:mb-14 w-full max-w-5xl mx-auto px-4"
         >
           {HERO_CONTENT.value_props.map((prop, index) => {
             const IconComponent = iconMap[prop.icon];
