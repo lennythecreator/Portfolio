@@ -266,6 +266,43 @@ body {
   animation: cursorBlink 1s infinite;
 }
 
+@keyframes rotate3d {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* 3D View specific styles */
+.view-3d-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Smooth canvas transitions */
+canvas {
+  outline: none;
+  touch-action: none;
+}
+
+/* HTML overlay in 3D scene styling */
+.r3f-html-overlay {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Ensure badges in 3D view render properly */
+[data-drei-html] {
+  pointer-events: none;
+}
+
+[data-drei-html] * {
+  pointer-events: none;
+}
+
 /* Glass Morphism */
 .glass-morphism {
   background: rgba(10, 10, 10, 0.7);
