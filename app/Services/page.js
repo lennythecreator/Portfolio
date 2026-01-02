@@ -1,7 +1,7 @@
 'use client';
 
 import Navbar from '@/components/navbar';
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { SERVICES, BOOKING } from '@/constants/constants';
 import { Globe, Server, ShoppingCart, Smartphone, Rocket, Code, Check, ArrowRight } from 'lucide-react';
@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import SplitText from '@/components/split-text';
 import Link from 'next/link';
 import MagneticElement from '@/components/magnetic-element';
+import EmailModal from '@/components/email-modal';
 
 const iconMap = {
   Globe: Globe,
@@ -20,6 +21,7 @@ const iconMap = {
 };
 
 export default function ServicesPage() {
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -136,13 +138,13 @@ export default function ServicesPage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <MagneticElement strength={0.2} className="w-full sm:w-auto">
-                <Link
-                  href={BOOKING.calendly_link}
+                <button
+                  onClick={() => setIsEmailModalOpen(true)}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-glow-blue hover:scale-105 text-sm md:text-base min-h-[48px] w-full sm:w-auto whitespace-nowrap"
                 >
                   Book Free Consultation
                   <ArrowRight size={18} className="flex-shrink-0" />
-                </Link>
+                </button>
               </MagneticElement>
               
               <MagneticElement strength={0.2} className="w-full sm:w-auto">
@@ -164,6 +166,9 @@ export default function ServicesPage() {
           </p>
         </motion.div>
       </div>
+
+      {/* Email Modal */}
+      <EmailModal isOpen={isEmailModalOpen} onClose={() => setIsEmailModalOpen(false)} />
     </div>
   );
 }

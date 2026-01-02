@@ -9,8 +9,11 @@ import { motion } from "framer-motion";
 import MagneticElement from "@/components/magnetic-element";
 import SplitText from "@/components/split-text";
 import { HERO_CONTENT, BOOKING } from "@/constants/constants";
+import EmailModal from "@/components/email-modal";
+import { useState } from "react";
 
 export default function Home() {
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
   const iconMap = {
     DollarSign: DollarSign,
     Zap: Zap,
@@ -101,14 +104,14 @@ export default function Home() {
 
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full max-w-md px-2">
           <MagneticElement strength={0.2} className="w-full sm:w-auto flex-1">
-            <Link
-              href={BOOKING.calendly_link}
+            <button
+              onClick={() => setIsEmailModalOpen(true)}
               className="flex items-center justify-center gap-2 px-4 py-3 md:px-6 md:py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-glow-blue hover:scale-105 text-sm md:text-base w-full font-semibold min-h-[48px]"
               style={{ whiteSpace: 'nowrap' }}
             >
               <Calendar size={18} className="flex-shrink-0" />
               <span className="truncate">{HERO_CONTENT.primary_cta}</span>
-            </Link>
+            </button>
           </MagneticElement>
 
           <MagneticElement strength={0.2} className="w-full sm:w-auto flex-1">
@@ -123,6 +126,9 @@ export default function Home() {
           </MagneticElement>
         </motion.div>
       </motion.div>
+
+      {/* Email Modal */}
+      <EmailModal isOpen={isEmailModalOpen} onClose={() => setIsEmailModalOpen(false)} />
     </div>
   );
 }
