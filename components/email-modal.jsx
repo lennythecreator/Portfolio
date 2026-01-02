@@ -29,13 +29,13 @@ export default function EmailModal({ isOpen, onClose }) {
 
           {/* Modal */}
           <motion.div
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md z-50"
-            initial={{ opacity: 0, scale: 0.95, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            className="fixed left-1/2 top-1/2 w-[95%] sm:w-full max-w-md z-50 max-h-[90vh] overflow-y-auto"
+            initial={{ opacity: 0, scale: 0.95, x: "-50%", y: "-40%" }}
+            animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
+            exit={{ opacity: 0, scale: 0.95, x: "-50%", y: "-40%" }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           >
-            <div className="bg-card border-2 border-border rounded-2xl shadow-2xl p-6 mx-4">
+            <div className="bg-card border-2 border-border rounded-2xl shadow-2xl p-4 sm:p-6 mx-auto">
               {/* Close button */}
               <button
                 onClick={onClose}
@@ -80,7 +80,7 @@ export default function EmailModal({ isOpen, onClose }) {
                 </div>
 
                 {/* Actions */}
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <a
                     href={`mailto:${email}`}
                     className="flex-1 px-4 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-medium"
