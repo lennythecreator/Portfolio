@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-pigment: #e2e4e9;
+            --clay-red: #d15139;
+            --deep-cobalt: #1a2c5b;
+            --bas-relief-light: rgba(255, 255, 255, 0.7);
+            --bas-relief-shadow: rgba(0, 0, 0, 0.12);
+            --transition-smooth: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        body {
+            background-color: var(--bg-pigment);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+
+        /* The Surface */
+        .service-container {
+            perspective: 1200px;
+            padding: 40px;
+        }
+
+        .relief-card {
+            width: 380px;
+            height: 520px;
+            background-color: var(--bg-pigment);
+            border-radius: 40px;
+            position: relative;
+            padding: 48px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            
+            /* Bas-Relief Extrusion */
+            box-shadow: 
+                15px 15px 35px var(--bas-relief-shadow),
+                -15px -15px 35px var(--bas-relief-light);
+            
+            transition: var(--transition-smooth);
+            overflow: hidden;
+        }
+
+        .relief-card:hover {
+            transform: translateY(-8px) rotateX(2deg);
+            box-shadow: 
+                25px 25px 50px var(--bas-relief-shadow),
+                -20px -20px 50px var(--bas-relief-light);
+        }
+
+        /* Carved Geometric Accents */
+        .relief-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: var(--bg-pigment);
+            box-shadow: 
+                inset 10px 10px 20px var(--bas-relief-shadow),
+                inset -10px -10px 20px var(--bas-relief-light);
+            z-index: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .relief-card:hover::before {
+            transform: scale(1.1);
+            background: #dfe1e7;
+        }
+
+        /* Pigmented Elements */
+        .status-chip {
+            position: relative;
+            z-index: 2;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--clay-red);
+            background: var(--bg-pigment);
+            padding: 8px 16px;
+            border-radius: 100px;
+            width: fit-content;
+            box-shadow: 
+                4px 4px 10px var(--bas-relief-shadow),
+                -4px -4px 10px var(--bas-relief-light);
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-id {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: rgba(26, 44, 91, 0.4);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .title {
+            font-size: 42px;
+            line-height: 0.95;
+            color: var(--deep-cobalt);
+            margin: 0 0 24px 0;
+            letter-spacing: -0.04em;
+        }
+
+        .description {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #5b688a;
+            max-width: 240px;
+        }
+
+        .action-area {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cta-button {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            background: var(--deep-cobalt);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 6px 6px 15px rgba(26, 44, 91, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .relief-card:hover .cta-button {
+            background: var(--clay-red);
+            box-shadow: 6px 6px 20px rgba(209, 81, 57, 0.4);
+            transform: scale(1.05);
+        }
+
+        .arrow {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transform: translateX(-2px);
+            transition: var(--transition-smooth);
+        }
+
+        .relief-card:hover .arrow {
+            transform: translateX(2px);
+        }
+
+        /* Animated Geometry Background */
+        .geo-circle {
+            position: absolute;
+            bottom: 15%;
+            left: -20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--bg-pigment);
+            box-shadow: 
+                inset 6px 6px 12px var(--bas-relief-shadow),
+                inset -6px -6px 12px var(--bas-relief-light);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+
+        /* Data Monospace Strip */
+        .data-strip {
+            position: absolute;
+            bottom: 120px;
+            right: -30px;
+            transform: rotate(-90deg);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: rgba(0,0,0,0.2);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="service-container">
+        <div class="relief-card">
+            <!-- Decorative Geometry -->
+            <div class="geo-circle"></div>
+            <div class="data-strip">LATENCY_CORE_v2.0 // STACK:RUST.GO.AWS</div>
+
+            <div class="status-chip">
+                Available
+            </div>
+
+            <div class="content">
+                <span class="service-id">001 / DISTRIBUTED</span>
+                <h2 class="title">Systems<br>Architecture</h2>
+                <p class="description">
+                    Designing high-throughput backends that breathe. Scalable, resilient, and carved for performance.
+                </p>
+            </div>
+
+            <div class="action-area">
+                <div class="monospace-metrics">
+                    <div style="font-family: 'JetBrains Mono'; font-size: 12px; color: var(--deep-cobalt); font-weight: 500;">UPTIME</div>
+                    <div style="font-family: 'JetBrains Mono'; font-size: 11px; color: var(--clay-red);">99.998%</div>
+                </div>
+                
+                <div class="cta-button">
+                    <svg class="arrow" viewBox="0 0 24 24">
+                        <path d="M5 12h14m-7-7l7 7-7 7"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const card = document.querySelector('.relief-card');
+        const container = document.querySelector('.service-container');
+
+        container.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            const rotateX = -y / 20;
+            const rotateY = x / 20;
+
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            card.style.transform = `rotateX(0deg) rotateY(0deg) translateY(0px)`;
+        });
+    </script>
+</body>
+</html>

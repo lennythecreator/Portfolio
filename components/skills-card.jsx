@@ -1,147 +1,109 @@
 'use client';
 
 import { Badge } from '@/components/ui/badge';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import React, { useRef } from 'react';
+import { cn } from "@/lib/utils";
 
 export default function SkillsCard({ skillCategories }) {
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const cardRef = useRef(null);
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
 
   const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = (y - centerY) / 20;
-    const rotateY = (centerX - x) / 20;
-    
-    setRotation({ x: rotateX, y: rotateY });
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    const xPct = (mouseX / width) - 0.5;
+    const yPct = (mouseY / height) - 0.5;
+
+    x.set(xPct);
+    y.set(yPct);
   };
 
   const handleMouseLeave = () => {
-    setRotation({ x: 0, y: 0 });
+    x.set(0);
+    y.set(0);
   };
 
   return (
     <motion.div
-      className="relative max-w-2xl mx-auto perspective-1000"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      className="relative w-full max-w-4xl bg-[#0A0A0A] rounded-[40px] p-8 md:p-12 cursor-pointer transition-all duration-500 ease-out shadow-[20px_20px_40px_rgba(0,0,0,0.5),-10px_-10px_20px_rgba(255,255,255,0.02)] hover:shadow-[30px_30px_60px_rgba(0,0,0,0.6),-10px_-10px_30px_rgba(255,255,255,0.03)] group overflow-hidden"
     >
-      {/* Hanging Rope/String */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full h-24 w-0.5 bg-gradient-to-b from-border/50 to-border z-20">
-        {/* String */}
-      </div>
-      
-      {/* Rope Attachment Point (hole in badge) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-30 flex items-center justify-center">
-        <div className="w-8 h-8 rounded-full bg-card border-2 border-border flex items-center justify-center">
-          <div className="w-4 h-4 rounded-full bg-background border border-border/50" />
-        </div>
-      </div>
+      {/* Background Decorative Rings */}
+      <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full border border-white/5 opacity-20 pointer-events-none" />
+      <div className="absolute top-[-150px] left-[-150px] w-[400px] h-[400px] rounded-full border border-white/[0.02] pointer-events-none" />
 
-      <motion.div
-        className="relative bg-card/95 backdrop-blur-sm border-2 border-border rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        animate={{
-          rotateX: rotation.x,
-          rotateY: rotation.y,
-        }}
-        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        style={{
-          transformStyle: 'preserve-3d',
-        }}
-      >
-        {/* Glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-purple-500/10 opacity-50" />
-        
-        {/* Content */}
-        <div className="relative z-10">
-          {/* Header */}
-          <div className="text-center mb-8">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-black text-white mb-3 tracking-tight"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              SKILLS
-            </motion.h2>
-            <motion.div 
-              className="h-[3px] w-24 bg-primary mx-auto opacity-70 rounded-full"
-              initial={{ width: 0 }}
-              animate={{ width: 96 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            />
+      {/* Content */}
+      <div className="relative z-10" style={{ transform: "translateZ(40px)" }}>
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-12">
+          {/* Left Column: Title & Intro */}
+          <div className="md:w-1/3">
+            <div className="font-mono text-[10px] text-[#3b82f6] uppercase tracking-[0.3em] mb-4">
+              ARCH_v2.0 // CORE_SYSTEM
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-none">
+              SKILLS_<br />MATRIX
+            </h2>
+            <p className="font-mono text-sm text-muted-foreground/60 leading-relaxed mb-8">
+              Visual map of technical competencies and toolchain integration.
+            </p>
+            <div className="w-12 h-1 bg-[#3b82f6] rounded-full mb-8 opacity-50" />
+
+            <div className="font-mono text-[10px] text-muted-foreground/30 uppercase space-y-1">
+              <div>STATUS: NOMINAL</div>
+              <div>AUTH: LENNY_CODE_v1.0</div>
+              <div>DATE: {new Date().getFullYear()}</div>
+            </div>
           </div>
 
-          {/* Skill Categories */}
-          <div className="space-y-6">
+          {/* Right Column: Skill Lists */}
+          <div className="md:w-2/3 space-y-10">
             {skillCategories.map((category, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 * index + 0.3 }}
-              >
-                <h3
-                  className="text-sm md:text-base font-bold uppercase mb-3 tracking-wide flex items-center gap-2"
-                >
-                  <span className="w-2 h-2 rounded-full bg-gradient-to-r from-gray-400 to-gray-300" />
-                  <span className="bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 bg-clip-text text-transparent relative">
-                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent bg-clip-text text-transparent blur-[1px]" aria-hidden="true">
-                      {category.title}
-                    </span>
+              <div key={index} className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#3b82f6] shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
+                  <h3 className="font-mono text-xs uppercase tracking-widest text-white/80">
                     {category.title}
-                  </span>
-                </h3>
+                  </h3>
+                </div>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, idx) => (
-                    <Badge 
-                      key={idx} 
-                      variant="secondary"
-                      className="text-xs md:text-sm px-3 py-1 hover:scale-105 transition-transform duration-200 cursor-default"
+                    <span
+                      key={idx}
+                      className="font-mono text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-lg bg-white/5 text-muted-foreground border border-white/5 hover:border-[#3b82f6]/50 hover:text-[#3b82f6] transition-all duration-300"
                     >
                       {skill}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-
-          {/* Footer */}
-          <motion.div 
-            className="text-center mt-8 pt-6 border-t border-border/30"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-          >
-            <p className="text-xs text-muted-foreground uppercase tracking-widest font-medium">
-              Technical Expertise
-            </p>
-          </motion.div>
         </div>
+      </div>
 
-        {/* Shine effect on hover */}
-        <motion.div
-          className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.1) 0%, transparent 50%)',
-          }}
-        />
-      </motion.div>
-
-      {/* Floating glow backdrop */}
-      <div className="absolute inset-0 -z-10 bg-primary/20 blur-3xl opacity-40 rounded-2xl animate-pulse" 
-        style={{ animationDuration: '3s' }} 
-      />
+      {/* Bottom Corner Accent */}
+      <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-br from-transparent to-[#3b82f6]/5 rounded-tl-full pointer-events-none" />
     </motion.div>
   );
 }

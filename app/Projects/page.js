@@ -2,7 +2,6 @@
 
 import Navbar from '@/components/navbar';
 import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { PROJECTS, BOOKING } from '@/constants/constants';
 import { Github, ExternalLink, ArrowRight } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -12,6 +11,7 @@ import SplitText from '@/components/split-text';
 import Link from 'next/link';
 import MagneticElement from '@/components/magnetic-element';
 import EmailModal from '@/components/email-modal';
+import { ReliefCard } from '@/components/relief-card';
 
 export default function ProjectsPage() {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
@@ -38,39 +38,41 @@ export default function ProjectsPage() {
   };
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-[#050505]">
       <Navbar />
       <div className="px-4 sm:px-6 md:px-12 lg:px-20 py-20 sm:py-24 md:py-32">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-8 md:mb-12"
+          className="mb-12 md:mb-16"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold py-2 glow-text break-words">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold py-2 glow-text break-words">
             <SplitText text="Projects" delay={50} />
           </h1>
-          <p className="text-muted-foreground text-sm sm:text-base md:text-lg mt-3 md:mt-4 break-words">
-            Real solutions built for real challenges. See how I&apos;ve leveraged AI and modern web technologies to solve complex problems and deliver measurable results.
+          <p className="text-muted-foreground font-mono text-sm sm:text-base md:text-lg mt-4 max-w-2xl">
+            // SOLUTIONS_DRIVEN_BY_AI_AND_ENGINEERING.EXE
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {PROJECTS.map((proj, index) => (
-            <motion.div key={index} variants={cardVariants}>
-              <Card className="h-full group hover:border-primary/50 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                <CardHeader className="relative p-4 md:p-6">
-                  <div className="flex items-start justify-between gap-3">
-                    <CardTitle className="text-lg sm:text-xl md:text-2xl font-bold group-hover:text-primary transition-colors duration-300 break-words flex-1">
+            <motion.div key={index} variants={cardVariants} className="h-full">
+              <ReliefCard
+                className="h-full min-h-[400px]"
+                dataText={`PROJECT_ID: ${proj.name.substring(0, 3).toUpperCase()} // ${proj.date.toUpperCase()}`}
+                accentColor="#3b82f6"
+              >
+                <div className="flex flex-col h-full">
+                  <div className="flex items-start justify-between gap-4 mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold group-hover:text-[#3b82f6] transition-colors duration-300 break-words leading-none">
                       {proj.name}
-                    </CardTitle>
+                    </h2>
                     {proj.link && (
                       <Tooltip>
                         <TooltipTrigger asChild>
@@ -78,9 +80,9 @@ export default function ProjectsPage() {
                             href={proj.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 md:p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-glow-blue hover:scale-110 flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center"
+                            className="p-3 rounded-xl bg-[#0A0A0A] border border-white/5 hover:bg-[#3b82f6] transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:scale-110 flex-shrink-0 flex items-center justify-center group/btn"
                           >
-                            <Github size={20} className="md:w-5 md:h-5" />
+                            <Github size={20} className="text-white" />
                           </a>
                         </TooltipTrigger>
                         <TooltipContent>
@@ -89,23 +91,31 @@ export default function ProjectsPage() {
                       </Tooltip>
                     )}
                   </div>
-                  <div className="flex flex-wrap gap-2 md:gap-2 mt-3 md:mt-4">
+
+                  <div className="flex flex-wrap gap-2 mb-8">
                     {proj.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="text-xs md:text-xs px-2 py-1 break-words">
+                      <span key={techIndex} className="font-mono text-[10px] uppercase tracking-widest px-3 py-1 rounded-full bg-white/5 text-muted-foreground border border-white/5">
                         {tech}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
-                </CardHeader>
-                
-                <CardContent className="text-sm sm:text-sm text-muted-foreground leading-relaxed relative p-4 md:p-6 break-words">
-                  {proj.description}
-                </CardContent>
-                
-                <CardFooter className="text-xs sm:text-xs text-muted-foreground relative p-4 md:p-6">
-                  {proj.date}
-                </CardFooter>
-              </Card>
+
+                  <div className="flex-grow">
+                    <p className="font-mono text-sm text-muted-foreground/70 leading-relaxed mb-8">
+                      {proj.description}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+                    <span className="font-mono text-xs text-muted-foreground/40 uppercase tracking-widest">
+                      {proj.date}
+                    </span>
+                    <div className="flex items-center gap-2 text-[#3b82f6] font-mono text-xs group-hover:translate-x-1 transition-transform">
+                      VIEW_DETAILS <ArrowRight size={14} />
+                    </div>
+                  </div>
+                </div>
+              </ReliefCard>
             </motion.div>
           ))}
         </motion.div>
@@ -114,32 +124,32 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mt-12 md:mt-16"
+          className="text-center max-w-2xl mx-auto mt-24"
         >
-          <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
-            <h3 className="text-xl md:text-2xl font-bold mb-3 break-words">Want Similar Results for Your Business?</h3>
-            <p className="text-muted-foreground text-sm md:text-base mb-6 break-words">
-              Let&apos;s discuss how I can help you build custom software solutions that drive real business value.
+          <div className="bg-[#0A0A0A] border border-white/5 shadow-2xl rounded-3xl p-8 md:p-12 mb-8 relative overflow-hidden group">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Want Similar Results?</h3>
+            <p className="text-muted-foreground font-mono text-sm md:text-base mb-8 italic">
+              "Building custom software solutions that drive real business value."
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <MagneticElement strength={0.2} className="w-full sm:w-auto">
                 <button
                   onClick={() => setIsEmailModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-glow-blue hover:scale-105 text-sm md:text-base font-semibold min-h-[48px] w-full sm:w-auto whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#3b82f6] text-white hover:bg-[#2563eb] transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:scale-105 text-sm md:text-base font-bold min-h-[56px] w-full sm:w-auto"
                 >
                   Book Free Consultation
-                  <ArrowRight size={18} className="flex-shrink-0" />
+                  <ArrowRight size={18} />
                 </button>
               </MagneticElement>
-              
+
               <MagneticElement strength={0.2} className="w-full sm:w-auto">
                 <Link
                   href="/Services"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all duration-300 hover:shadow-glow hover:scale-105 text-sm md:text-base font-semibold min-h-[48px] w-full sm:w-auto whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all duration-300 hover:scale-105 text-sm md:text-base font-bold min-h-[56px] w-full sm:w-auto"
                 >
                   View All Services
-                  <ArrowRight size={18} className="flex-shrink-0" />
+                  <ArrowRight size={18} />
                 </Link>
               </MagneticElement>
             </div>
@@ -147,7 +157,6 @@ export default function ProjectsPage() {
         </motion.div>
       </div>
 
-      {/* Email Modal */}
       <EmailModal isOpen={isEmailModalOpen} onClose={() => setIsEmailModalOpen(false)} />
     </div>
   );

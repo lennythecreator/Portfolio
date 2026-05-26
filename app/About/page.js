@@ -3,10 +3,10 @@
 import Navbar from '@/components/navbar';
 import React from 'react';
 import { EXPERIENCE, EDUCATION } from '@/constants/constants';
-import { Briefcase, GraduationCap, Guitar, Palette } from 'lucide-react';
+import { Briefcase, GraduationCap, Guitar, Palette, MapPin, Calendar, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SplitText from '@/components/split-text';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ReliefCard } from '@/components/relief-card';
 
 export default function AboutPage() {
   const backGround =
@@ -35,23 +35,23 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-[#050505]">
       <Navbar />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-32">
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-8 md:mb-12"
+          className="mb-12 md:mb-16"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 glow-text break-words overflow-wrap-anywhere">
-            <SplitText text="Chukwulenyeudo (Lenny) Uwaeme" delay={30} />
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 glow-text break-words">
+            <SplitText text="Lenny Uwaeme" delay={30} />
           </h1>
-          <div className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-muted-foreground mb-4 md:mb-6 flex-wrap">
-            <Briefcase className="text-primary w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-            <p className="text-xs sm:text-sm md:text-base break-words">
-              <strong className="text-foreground">Freelance Software Engineer</strong> | DMV Area
-            </p>
+          <div className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-muted-foreground mb-4 md:mb-6 font-mono">
+            <span className="text-[#3b82f6]">//</span>
+            <span>FREELANCE_SOFTWARE_ENGINEER</span>
+            <span className="text-muted-foreground/30 px-2">|</span>
+            <span className="flex items-center gap-1"><MapPin size={14} /> DMV area</span>
           </div>
         </motion.header>
 
@@ -59,25 +59,32 @@ export default function AboutPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-8 md:mb-12"
+          className="mb-16 md:mb-24"
         >
-          <Card className="border-primary/20">
-            <CardHeader className="p-4 sm:p-5 md:p-6">
-              <CardTitle className="text-xl sm:text-2xl">About Me</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 md:space-y-4 p-4 sm:p-5 md:p-6">
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed break-words">{backGround}</p>
-              <div className="flex items-start gap-2 md:gap-3 p-3 md:p-4 rounded-lg bg-secondary/50 border border-border">
-                <div className="flex gap-1.5 md:gap-2 mt-1 flex-shrink-0">
-                  <Guitar className="text-primary w-4 h-4 md:w-5 md:h-5" />
-                  <Palette className="text-primary w-4 h-4 md:w-5 md:h-5" />
+          <ReliefCard
+            showGeo={true}
+            showDataStrip={true}
+            dataText="BIO_CORE_v1.0 // FOCUS: ML.WEB.ARCHITECTURE"
+            className="md:p-12"
+          >
+            <div className="space-y-6">
+              <h2 className="text-2xl sm:text-3xl font-bold flex items-center gap-2">
+                <span className="text-[#3b82f6]">./</span>About_Me
+              </h2>
+              <p className="font-mono text-sm sm:text-base text-muted-foreground/80 leading-relaxed max-w-3xl">
+                {backGround}
+              </p>
+              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 w-fit">
+                <div className="flex gap-2">
+                  <Guitar className="text-[#3b82f6] w-5 h-5" />
+                  <Palette className="text-[#3b82f6] w-5 h-5" />
                 </div>
-                <p className="text-xs sm:text-sm text-foreground break-words">
-                  <strong>Fun fact:</strong> I play the guitar and love to draw in my free time.
+                <p className="text-xs sm:text-sm font-mono text-foreground">
+                  FUN_FACT: I play the guitar and love to draw.
                 </p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </ReliefCard>
         </motion.div>
 
         <motion.div
@@ -85,13 +92,12 @@ export default function AboutPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 md:mb-8 flex items-center gap-2 md:gap-3">
-            <Briefcase className="text-primary w-5 h-5 sm:w-6 sm:h-6" />
-            <SplitText text="Experience" delay={50} />
+          <h2 className="text-3xl font-bold mb-10 flex items-center gap-3">
+            <span className="text-[#3b82f6]">./</span>Experience_
           </h2>
 
           <motion.div
-            className="relative border-l-2 border-primary/30 pl-6 sm:pl-6 md:pl-8 ml-2 space-y-6 md:space-y-8"
+            className="relative border-l-2 border-[#3b82f6]/20 py-2 sm:pl-6 md:pl-10 ml-4 space-y-10"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -99,30 +105,36 @@ export default function AboutPage() {
           >
             {EXPERIENCE.map((exp, index) => (
               <motion.div key={index} variants={itemVariants} className="relative">
-                <div className="absolute -left-[29px] sm:-left-[29px] md:-left-[33px] top-0 w-4 h-4 sm:w-4 sm:h-4 md:w-6 md:h-6 rounded-full bg-primary border-2 sm:border-2 md:border-4 border-background shadow-glow-blue" />
+                <div className="absolute -left-[41px] sm:-left-[41px] md:-left-[57px] top-6 w-4 h-4 md:w-6 md:h-6 rounded-full bg-[#3b82f6] border-4 border-background shadow-[0_0_15px_rgba(59,130,246,0.5)] z-20" />
 
-                <Card className="hover:border-primary/50 transition-all duration-300 hover:shadow-glow overflow-hidden">
-                  <CardHeader className="p-4 sm:p-5 md:p-6">
-                    <div className="flex flex-col gap-1.5 md:gap-2 mb-2">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
-                        <CardTitle className="text-base sm:text-lg md:text-xl break-words">
-                          <SplitText text={exp.title} delay={100 + index * 30} />
-                        </CardTitle>
-                        <span className="text-xs sm:text-sm text-muted-foreground whitespace-nowrap flex-shrink-0">{exp.date}</span>
+                <ReliefCard
+                  showGeo={false}
+                  showDataStrip={true}
+                  dataText={`EXP_LOG: 00${index + 1} // AUTH: ${exp.company.split(' ')[0].toUpperCase()}`}
+                  className="rounded-[30px] p-6 sm:p-8"
+                  accentColor="#3b82f6"
+                >
+                  <div className="flex flex-col gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                      <h3 className="text-xl sm:text-2xl font-bold group-hover:text-[#3b82f6] transition-colors duration-300">
+                        {exp.title}
+                      </h3>
+                      <div className="flex items-center gap-1.5 text-xs text-muted-foreground/50 font-mono italic">
+                        <Calendar size={12} /> {exp.date}
                       </div>
                     </div>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-primary font-medium text-sm md:text-base flex-wrap">
-                      <span className="break-words">{exp.company}</span>
-                      <span className="text-muted-foreground hidden sm:inline">•</span>
-                      <span className="text-xs sm:text-sm text-muted-foreground break-words">{exp.location}</span>
+
+                    <div className="flex items-center gap-2 text-[#3b82f6] font-mono text-sm tracking-tight">
+                      <Briefcase size={14} /> {exp.company}
+                      <span className="text-muted-foreground/30">•</span>
+                      <span className="text-xs text-muted-foreground/60">{exp.location}</span>
                     </div>
-                  </CardHeader>
-                  <CardContent className="p-4 sm:p-5 md:p-6 pt-0">
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed break-words">
+
+                    <p className="font-mono text-sm text-muted-foreground/70 leading-relaxed mt-2">
                       {exp.responsibilities}
                     </p>
-                  </CardContent>
-                </Card>
+                  </div>
+                </ReliefCard>
               </motion.div>
             ))}
           </motion.div>
