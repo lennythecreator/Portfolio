@@ -51,7 +51,7 @@ export default function ProjectsPage() {
             <SplitText text="Projects" delay={50} />
           </h1>
           <p className="text-muted-foreground font-mono text-sm sm:text-base md:text-lg mt-4 max-w-2xl">
-            // SOLUTIONS_DRIVEN_BY_AI_AND_ENGINEERING.EXE
+            {"// SOLUTIONS_DRIVEN_BY_AI_AND_ENGINEERING.EXE"}
           </p>
         </motion.div>
 
@@ -129,7 +129,7 @@ export default function ProjectsPage() {
           <div className="bg-[#0A0A0A] border border-white/5 shadow-2xl rounded-3xl p-8 md:p-12 mb-8 relative overflow-hidden group">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Want Similar Results?</h3>
             <p className="text-muted-foreground font-mono text-sm md:text-base mb-8 italic">
-              "Building custom software solutions that drive real business value."
+              &quot;Building custom software solutions that drive real business value.&quot;
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

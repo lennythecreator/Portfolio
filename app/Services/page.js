@@ -99,7 +99,7 @@ export default function ServicesPage() {
             <SplitText text="Services" delay={50} />
           </h1>
           <p className="text-muted-foreground text-base sm:text-lg md:text-xl font-mono">
-            // DEVELOPING_HIGH_THROUGHPUT_SOLUTIONS.EXE
+            {"// DEVELOPING_HIGH_THROUGHPUT_SOLUTIONS.EXE"}
           </p>
         </motion.div>
 
@@ -126,7 +126,7 @@ export default function ServicesPage() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Initialize Project_</h3>
             <p className="text-muted-foreground font-mono text-sm md:text-base mb-8">
-              {BOOKING.consultation_price} // {BOOKING.response_time}
+              {BOOKING.consultation_price} {"//"} {BOOKING.response_time}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

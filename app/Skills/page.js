@@ -109,7 +109,7 @@ export default function SkillsPage() {
           </div>
 
           <p className="text-muted-foreground font-mono text-sm sm:text-base md:text-lg">
-            // MAPPING_FULL_STACK_CAPABILITIES.EXE
+            {"// MAPPING_FULL_STACK_CAPABILITIES.EXE"}
           </p>
         </motion.div>
 

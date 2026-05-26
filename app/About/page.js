@@ -48,7 +48,7 @@ export default function AboutPage() {
             <SplitText text="Lenny Uwaeme" delay={30} />
           </h1>
           <div className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-muted-foreground mb-4 md:mb-6 font-mono">
-            <span className="text-[#3b82f6]">//</span>
+            <span className="text-[#3b82f6]">{"//"}</span>
             <span>FREELANCE_SOFTWARE_ENGINEER</span>
             <span className="text-muted-foreground/30 px-2">|</span>
             <span className="flex items-center gap-1"><MapPin size={14} /> DMV area</span>
