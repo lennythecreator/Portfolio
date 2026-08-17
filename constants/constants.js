@@ -67,8 +67,8 @@ const EXPERIENCE = [
         title: "Undergraduate Researcher",
         company:"Human AI Experience Lab",
         location:"Baltimore, MD",
-        responsibilities:"At the Human-AI Experience Lab, I developed applications that leverage conversational AI and web technologies to enhance user engagement and increase user satisfaction.",
-        date:"Aug 2025 - Dec 2025"
+        responsibilities:"At the Human-AI Experience Lab, I implemented observability and logging pipelines in Python to monitor the runtime health and performance of a brainwave-powered drone controller platform, enabling real-time fault detection and system diagnostics. I performed firmware testing and debugging on embedded drone systems to validate controller reliability and ensure stable, compliant flight behavior. I also collaborated with interdisciplinary researchers across AI, human-computer interaction, and embedded systems to evaluate system robustness and analyze experimental results using SQL.",
+        date:"Sep 2025 - Dec 2025"
     },
     {
         title:"Software Engineer",
