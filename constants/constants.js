@@ -265,32 +265,32 @@ const SERVICE_ADDONS = [
 ];
 
 const HERO_CONTENT = {
-    headline: "Your DMV Freelance Developer for Custom Software Solutions",
-    subheadline: "I build professional websites, mobile apps, and web solutions for businesses—starting with transparent, straightforward pricing.",
+    headline: "Lenny Uwaeme — Software Engineer & AI/ML Developer",
+    subheadline: "I build full-stack web applications, mobile apps, and AI-powered tools. Explore my projects, skills, and research.",
     value_props: [
         {
-            icon: "DollarSign",
-            text: "Transparent Pricing",
-            description: "Clear quotes, no surprises"
+            icon: "Code2",
+            text: "Full-Stack Development",
+            description: "React, Next.js, Node, Python"
         },
         {
-            icon: "Zap",
-            text: "Fast Turnaround",
-            description: "1-6 weeks delivery time"
+            icon: "Brain",
+            text: "AI & Machine Learning",
+            description: "LLMs, computer vision, data pipelines"
         },
         {
             icon: "Award",
-            text: "Quality Guaranteed",
-            description: "Modern tech stack & best practices"
+            text: "Hackathon Winner",
+            description: "Awarded 'Best Customer Value' at hackathons"
         },
         {
             icon: "Users",
-            text: "Local to DMV",
-            description: "Maryland-based, easy communication"
+            text: "Accessibility Advocate",
+            description: "WCAG-compliant, inclusive design"
         }
     ],
-    primary_cta: "Book Free Consultation",
-    secondary_cta: "View My Services"
+    primary_cta: "View My Projects",
+    secondary_cta: "View My Skills"
 };
 
 const BOOKING = {
