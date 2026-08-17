@@ -166,7 +166,7 @@ const SERVICES = [
         ],
         ideal_for: "New businesses, service providers, and portfolios",
         pricing_range: "$350 - $1,500",
-        timeline: "1-2 weeks"
+        timeline: "2-4 weeks"
     },
     {
         title: "AI-Coded App Hosting & Deployment",
@@ -180,7 +180,7 @@ const SERVICES = [
         ],
         ideal_for: "Non-technical founders with AI-generated code",
         pricing_range: "$200 - $800",
-        timeline: "2-5 days"
+        timeline: "1-2 weeks"
     },
     {
         title: "Custom E-commerce Website",
@@ -194,7 +194,7 @@ const SERVICES = [
         ],
         ideal_for: "Small retailers and online stores",
         pricing_range: "$2,500 - $4,500",
-        timeline: "3-4 weeks"
+        timeline: "6-10 weeks"
     },
     {
         title: "Mobile App Development",
@@ -208,7 +208,7 @@ const SERVICES = [
         ],
         ideal_for: "Startups validating ideas and small business apps",
         pricing_range: "$3,500 - $5,000",
-        timeline: "4-6 weeks"
+        timeline: "2-4 months"
     },
     {
         title: "MVP Development",
@@ -222,7 +222,7 @@ const SERVICES = [
         ],
         ideal_for: "Entrepreneurs testing product-market fit",
         pricing_range: "$3,000 - $5,000",
-        timeline: "4-6 weeks"
+        timeline: "2-4 months"
     },
     {
         title: "Full-Stack Web Application",
@@ -236,7 +236,7 @@ const SERVICES = [
         ],
         ideal_for: "Growing businesses needing custom solutions",
         pricing_range: "$2,000 - $5,000",
-        timeline: "4-8 weeks"
+        timeline: "2-3 months"
     }
 ];
 

@@ -10,7 +10,7 @@ import { ReliefCard } from '@/components/relief-card';
 
 export default function AboutPage() {
   const backGround =
-    "I'm a freelance software engineer with a diverse background in different areas of application development. I graduated from Morgan State University with a degree in Computer Science, specializing in Machine Learning. My work focuses on integrating ML models into applications for practical use, building custom web solutions for small businesses, and helping non-technical founders deploy their AI-generated apps.";
+    "I'm a software engineer with a diverse background in different areas of application development. I graduated from Morgan State University with a degree in Computer Science, specializing in Machine Learning. My work focuses on integrating ML models into applications for practical use, building custom web solutions, and helping non-technical founders deploy their AI-generated apps.";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -49,7 +49,7 @@ export default function AboutPage() {
           </h1>
           <div className="flex items-center gap-2 text-sm sm:text-base md:text-lg text-muted-foreground mb-4 md:mb-6 font-mono">
             <span className="text-[#3b82f6]">{"//"}</span>
-            <span>FREELANCE_SOFTWARE_ENGINEER</span>
+            <span>SOFTWARE_ENGINEER</span>
             <span className="text-muted-foreground/30 px-2">|</span>
             <span className="flex items-center gap-1"><MapPin size={14} /> DMV area</span>
           </div>
