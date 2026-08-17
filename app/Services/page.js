@@ -46,12 +46,7 @@ const ServiceInstance = ({ service }) => {
           </p>
         </div>
 
-        <div className="flex items-center justify-between mt-auto">
-          <div className="font-mono">
-            <div className="text-[12px] text-foreground font-medium uppercase opacity-50">PRICE</div>
-            <div className="text-[14px] text-[#3b82f6] font-bold">{service.pricing_range}</div>
-          </div>
-
+        <div className="flex items-center justify-end mt-auto">
           <div className="w-14 h-14 rounded-2xl bg-[#0A0A0A] border border-white/5 flex items-center justify-center shadow-[6px_6px_15px_rgba(0,0,0,0.4),-2px_-2px_10px_rgba(255,255,255,0.02)] group-hover:bg-[#3b82f6] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-500">
             <ArrowRight className="w-6 h-6 text-white group-hover:translate-x-1 transition-transform" />
           </div>
